@@ -1,0 +1,35 @@
+.galleryImagesGrid{
+    column-count: 2;
+    column-rule-width: "33%";
+    -webkit-column-count: 3;
+    /* -moz-column-count: 4, */
+    -webkit-column-rule-width: "33%";
+    /* MozColumnRuleWidth: "33%", */
+    padding: 0 10px;
+
+
+}
+
+.tendencias{
+    
+    font-size: 20px;
+}
+
+.tendencias h4{
+    color:#1a74f0
+}
+
+.tendencias label{
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 900px) {
+    .galleryImagesGrid{
+        column-count: 1;
+        -webkit-column-count: 1;
+        -moz-column-count: 1,
+     
+    }
+  }
