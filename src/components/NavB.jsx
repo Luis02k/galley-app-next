@@ -30,7 +30,7 @@ const tendencias = {
     { label: "Abu simbel", value: "abu simbel" },
   ],
 };
-const NavB = ({ input, setInput, peticionN, animales }) => {
+const NavB = ({ peticionN }) => {
   const handleClick = (e) => {
     peticionN(e);
   };

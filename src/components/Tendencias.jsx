@@ -1,5 +1,4 @@
 import React from "react";
-import NavB from "./NavB";
 
 const Tendencias = ({ tendencias, handleClick }) => {
   return (
@@ -7,7 +6,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
       <h4
         style={{
           fontWeight: "800",
-          fontFamily: "Bebas Neue",
         }}
       >
         Animales
@@ -16,8 +14,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
         <label
           style={{
             height: "35px",
-
-            fontFamily: "Bebas Neue",
           }}
           href="#"
           class="btn btn-light"
@@ -34,7 +30,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
         style={{
           fontWeight: "800",
           marginTop: "5px",
-          fontFamily: "Bebas Neue",
         }}
       >
         Paises
@@ -43,8 +38,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
         <label
           style={{
             height: "35px",
-
-            fontFamily: "Bebas Neue",
           }}
           href="#"
           class="btn btn-light"
@@ -61,7 +54,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
         style={{
           fontWeight: "800",
           marginTop: "5px",
-          fontFamily: "Bebas Neue",
         }}
       >
         {" "}
@@ -71,8 +63,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
         <label
           style={{
             height: "35px",
-
-            fontFamily: "Bebas Neue",
           }}
           href="#"
           class="btn btn-light"

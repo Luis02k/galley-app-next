@@ -9,12 +9,14 @@ import {
   Input,
   Button,
   Navbar,
+  useTheme,
 } from "@nextui-org/react";
 import styles from "@/styles/cards.module.css";
 
 const Cards = () => {
   const [images, setImages] = useState([]);
   const [input, setInput] = useState("");
+  const { isDark } = useTheme(true);
 
   const peticion = async (e) => {
     const key = "client_id=vwL9AtGcvwfhrI96O7kq6sK49n6DqxgwGrviH5TAhQw";
@@ -70,13 +72,28 @@ const Cards = () => {
   };
 
   return (
-    <Container style={{ margin: "0", padding: "0" }}>
-      <Navbar style={{ width: "auto" }}>
-        <h1 style={{ fontFamily: "Bebas Neue, sans-serif" }}>Gallery app</h1>
+    <Container
+      style={{
+        margin: "0",
+        padding: "0",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Navbar isBordered={isDark} variant="floating " style={{ width: "100%" }}>
+        <h1 className={styles.logoTitulo} style={{ fontFamily: "Bebas Neue," }}>
+          Gallery app
+        </h1>
         <form onSubmit={handleSubmit}>
           <label>
-            <Input type="text " name="input text" placeholder="Buscador...." />
+            <Input
+              className={styles.input}
+              type="text "
+              name="input text"
+              placeholder="Buscador...."
+            />
             <Button
+              className={styles.button}
               light
               color="primary"
               auto
@@ -95,19 +112,7 @@ const Cards = () => {
         </Col>
 
         <Col span={8}>
-          <div
-            // style={{
-            //   // display: "grid",
-            //   // gridAutoColumns: "auto",
-            //   // gridTemplateColumns: "repeat( auto-fit, minmax(310px, 1fr) )",
-            //   WebkitColumnCount: "3",
-            //   MozColumnCount: "4",
-            //   WebkitColumnRuleWidth: "33%",
-            //   MozColumnRuleWidth: "33%",
-            //   padding: "0 10px",
-            // }}
-            className={styles.galleryImagesGrid}
-          >
+          <div className={styles.galleryImagesGrid}>
             {images.map((img) => {
               return <Cardcontainer key={img.id} img={img.urls.regular} />;
             })}
