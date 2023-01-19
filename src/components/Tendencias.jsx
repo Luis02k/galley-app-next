@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Tendencias = ({ tendencias, handleClick }) => {
@@ -12,11 +13,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
       </h4>
       {tendencias.animales.map((item, index) => (
         <label
-          style={{
-            height: "35px",
-          }}
-          href="#"
-          class="btn btn-light"
           key={index}
           onClick={(e) => {
             handleClick(item.value);
@@ -36,11 +32,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
       </h4>
       {tendencias.countris.map((item, index) => (
         <label
-          style={{
-            height: "35px",
-          }}
-          href="#"
-          class="btn btn-light"
           key={index}
           onClick={(e) => {
             handleClick(item.value);
@@ -61,11 +52,6 @@ const Tendencias = ({ tendencias, handleClick }) => {
       </h4>
       {tendencias.place.map((item, index) => (
         <label
-          style={{
-            height: "35px",
-          }}
-          href="#"
-          class="btn btn-light"
           key={index}
           onClick={(e) => {
             handleClick(item.value);
