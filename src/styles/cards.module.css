@@ -19,15 +19,31 @@
 }
 
 .tendencias h4{
-    color:#1a74f0
+    color:#1a74f0;
+
 }
 
 .tendencias label{
+    
+    margin: 10px;
     margin-left: 15px;
     cursor: pointer;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ 
+  
+}
+
+
+
+.tendencias label:hover{
+    color: #277cf3;
+    font-size: 18px;
+  
+  
+    
     
 }
+    
 
 
 @media (max-width: 900px) {
