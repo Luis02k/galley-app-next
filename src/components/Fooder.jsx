@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container-fluid ">
         <p
           style={{
-            color: "black",
+            color: "white",
             marginLeft: "50%",
             fontFamily: "Bebas Neue",
           }}

@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@mantine/core": "^5.10.1",
+    "@mantine/hooks": "^5.10.1",
     "@next/font": "13.1.2",
     "@nextui-org/react": "^1.0.0-beta.12",
+    "@tabler/icons": "^1.119.0",
     "bootstrap": "^5.2.3",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
     "next": "13.1.2",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card, { Cardcontainer } from "./Cardcontainer";
 import NavB from "./NavB";
+
 import {
   Container,
   Row,
@@ -12,11 +13,14 @@ import {
   useTheme,
 } from "@nextui-org/react";
 import styles from "@/styles/cards.module.css";
+import { IconSend, IconSearch } from "@tabler/icons";
+import Theme from "./Theme";
+import { Flex } from "@mantine/core";
 
-const Cards = () => {
+const Cards = (theme) => {
   const [images, setImages] = useState([]);
   const [input, setInput] = useState("");
-  const { isDark } = useTheme(true);
+  const { descripcion, setDescripcion } = useState();
 
   const peticion = async (e) => {
     const key = "client_id=vwL9AtGcvwfhrI96O7kq6sK49n6DqxgwGrviH5TAhQw";
@@ -56,6 +60,10 @@ const Cards = () => {
     } else {
       setImages(data);
     }
+    if (data.results.description) {
+      setDescripcion(data.results.description);
+    }
+    console.log(descripcion);
   };
 
   useEffect(() => {
@@ -72,54 +80,59 @@ const Cards = () => {
   };
 
   return (
-    <Container
-      style={{
-        margin: "0",
-        padding: "0",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <Navbar isBordered={isDark} variant="floating " style={{ width: "100%" }}>
+    <Flex direction={"column"}>
+      <Navbar variant="floating " style={{ width: "100%", display: "flex" }}>
         <h1 className={styles.logoTitulo} style={{ fontFamily: "Bebas Neue," }}>
           Gallery app
         </h1>
+
         <form onSubmit={handleSubmit}>
           <label>
-            <Input
-              className={styles.input}
-              type="text "
-              name="input text"
-              placeholder="Buscador...."
-            />
-            <Button
-              className={styles.button}
-              light
-              color="primary"
-              auto
-              ghost
-              style={{ display: "inline", marginBottom: "5px", margin: "3px" }}
-              type="submit"
-            >
-              Buscar
-            </Button>
+            <div className={styles.containerContet}>
+              <Theme />
+              <Input
+                type="text"
+                name="input text"
+                labelPlaceholder="Buscador"
+                bordered
+                color="primary"
+                contentRight={<IconSend />}
+              />
+
+              <Button
+                icon={<IconSearch filled />}
+                className={styles.button}
+                light
+                auto
+                ghost
+                style={{
+                  marginTop: "10px",
+                  display: "inline",
+                  marginBottom: "5px",
+                  margin: "3px",
+                }}
+                type="submit"
+              ></Button>
+            </div>
           </label>
         </form>
       </Navbar>
-      <Row fluid style={{ width: "100%" }}>
-        <Col span={"auto"} className={styles.tendencias}>
-          <NavB peticionN={(e) => peticionN(e)} />
-        </Col>
+      <Flex>
+        <Row fluid style={{ width: "100%" }} justify="space-around">
+          <Col span={"auto"} className={styles.tendencias}>
+            <NavB peticionN={(e) => peticionN(e)} />
+          </Col>
 
-        <Col span={8}>
-          <div className={styles.galleryImagesGrid}>
-            {images.map((img) => {
-              return <Cardcontainer key={img.id} img={img.urls.regular} />;
-            })}
-          </div>
-        </Col>
-      </Row>
-    </Container>
+          <Col span={8}>
+            <div className={styles.galleryImagesGrid}>
+              {images.map((img) => {
+                return <Cardcontainer key={img.id} img={img.urls.regular} />;
+              })}
+            </div>
+          </Col>
+        </Row>
+      </Flex>
+    </Flex>
   );
 };
 

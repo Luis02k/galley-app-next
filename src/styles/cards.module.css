@@ -1,7 +1,7 @@
 .galleryImagesGrid{
     column-count: 2;
     column-rule-width: "33%";
-    -webkit-column-count: 3;
+    -webkit-column-count: 4;
     /* -moz-column-count: 4, */
     -webkit-column-rule-width: "33%";
     /* MozColumnRuleWidth: "33%", */
@@ -9,9 +9,9 @@
 
 
 }
-
-
-
+.styleInput{
+    width: 100px;
+}
 
 .tendencias{
     
@@ -29,6 +29,7 @@
     margin-left: 15px;
     cursor: pointer;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: color 0.4s, font-size 0.4s;
  
   
 }
@@ -38,14 +39,34 @@
 .tendencias label:hover{
     color: #277cf3;
     font-size: 18px;
-  
-  
-    
     
 }
-    
+
+.logoTitulo{
+   font-size: 35px;
+   
+}
+.containerContet{
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
 
+
+   
+   
+}
+@media (max-width: 1200px) {
+    .galleryImagesGrid{
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3
+        ,
+     
+    }
+   
+
+}
 @media (max-width: 900px) {
     .galleryImagesGrid{
         column-count: 1;
@@ -57,13 +78,12 @@
         font-size: 14px;
     }
     .logoTitulo{
-        font-size: 15px;
-    }
-    .button {
-        width: 20px;
-    }
-    .input{
-        width: 20px;
+        font-size: 13px;
     }
 
+    .containerContet Input{
+        width: 100px;
+
   }
+
+}

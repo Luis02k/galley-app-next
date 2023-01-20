@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { Button, Collapse, Text } from "@nextui-org/react";
 
 const Tendencias = ({ tendencias, handleClick }) => {
   return (
@@ -11,6 +12,7 @@ const Tendencias = ({ tendencias, handleClick }) => {
       >
         Animales
       </h4>
+
       {tendencias.animales.map((item, index) => (
         <label
           key={index}
